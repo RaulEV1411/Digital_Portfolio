@@ -16,21 +16,16 @@
           <div class="offcanvas-body">
             <ul class="navbar-nav justify-content-end flex-grow-1">
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                <p class="nav-link "> <%= link_to 'Home', root_path %> </p>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#!" id="accountDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Explore</a>
-                <ul class="dropdown-menu border-0 shadow bsb-zoomIn" aria-labelledby="accountDropdown">
-                  <li><a class="dropdown-item" href="blog.html">Blog</a></li>
-                  <li><a class="dropdown-item" href="single.html">Post</a></li>
-                  <li><a class="dropdown-item" href="project.html">Project</a></li>
-                </ul>
+                <p class="nav-link"><%= link_to 'Users', "/users" %></p>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="services.html">Services</a>
+                <p class="nav-link"><%= link_to 'Projects', "/projects" %></p>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="portfolio.html">Portfolio</a>
+                <p class="nav-link"><%= link_to 'Skills', "/skills" %></p>
               </li>
               <li class="nav-item">
                 <a class="nav-link active" href="about.html">About</a>

@@ -19,8 +19,13 @@
 <header>  
     <h2>Welcome</h2>
       <ul>
-        <li><%= link_to 'Logo', root_path %></li>
+        <li><%= link_to 'Me', root_path %></li>
         <li><%= link_to 'user', '/users' %></li>
-
       </ul>
 </header>
+
+<% if user_signed_in? %>      
+                <%= link_to "Sign Out", sign_out_path %>
+            <% else %>
+                <%= link_to "Sign In", new_user_session_path %>
+            <% end %>
