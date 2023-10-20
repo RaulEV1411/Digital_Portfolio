@@ -1,6 +1,7 @@
 <p style="color: green"><%= notice %></p>
 
 <%= render @user %>
+<%= image_tag @user.photo, width: 250%>
 
 <div>
   <%= link_to "Edit this user", edit_user_path(@user) %> |
