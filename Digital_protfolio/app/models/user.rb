@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+    enum role: [:regular , :admin]
     has_one_attached :photo
 
     # Include default devise modules. Others available are:
