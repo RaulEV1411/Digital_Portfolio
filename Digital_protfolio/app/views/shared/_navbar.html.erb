@@ -1,9 +1,18 @@
 <body> 
     <div class="container-fluid my_bg py-3 d-none d-md-block">
         <div class="container">
-            <div class="col-md-6 text-center text-lg-left mb-2 mb-lg-0">
+            <div class="mb-2 mb-lg-0">
                     <div class="d-inline-flex align-items-center">
-                        <a class="text-white pr-3" href="">FAQs</a>
+                        <button>
+    <% if user_signed_in? %>      
+  <%= link_to "Sign Out", sign_out_path %>
+<% else %>
+  <%= link_to "Sign In", new_user_session_path %>
+<% end %>
+    <div class="arrow-wrapper">
+        <div class="arrow"></div>
+    </div>
+</button>
                     </div>
             </div>
         </div>
@@ -21,9 +30,9 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav ml-auto py-0">
-                        <a href="index.html" class="nav-item nav-link">Home</a>
-                        <a href="about.html" class="nav-item nav-link active">About</a>
-                        <a href="product.html" class="nav-item nav-link">Product</a>
+                        <p class="nav-item nav-link"><%= link_to 'Home', root_path %></p>
+                        <p class="nav-item nav-link active"><%= link_to 'Skills', "/skills" %></p>
+                        <p class="nav-item nav-link"><%= link_to 'Projects', "/projects" %></p>
                     </div>
                     <a href="index.html" class="navbar-brand mx-5 d-none d-lg-block">
                         <h1 class="m-0 display-4 text_colors">Portfolio</h1>

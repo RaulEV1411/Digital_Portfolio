@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
+  root "about#index"
   resources :posts
   devise_for :users
-  
   resources :skills
   resources :social_links
   resources :skill_types
@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   resources :user_types
   resources :projects
   resources :users
-
   devise_scope :user do
     get "/about/sign_out", as: "sign_out", to: "devise/sessions#destroy"
   end
@@ -17,7 +16,14 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  root "about#index"
-
+  namespace :admin, path: '/admin' do
+    resources :projects
+    resources :skills
+    resources :skills_types
+    resources :social_links
+    resources :tecnologies
+    resources :users
+    resources :users_types
+  end
 end
     

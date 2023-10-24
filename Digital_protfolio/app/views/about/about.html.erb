@@ -11,9 +11,3 @@
     </div>
     <!-- Header End -->
 
-
-<% if user_signed_in? %>      
-  <%= link_to "Sign Out", sign_out_path %>
-<% else %>
-  <%= link_to "Sign In", new_user_session_path %>
-<% end %>
