@@ -1,32 +1,19 @@
-<%# <nav class="navbar navbar-expand-lg ">
-  <div class="container-fluid">
-    <a class="navbar-brand text-white" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-link active" aria-current="page" href="#">Home</a>
-        <a class="nav-link text-white" href="#">Features</a>
-        <a class="nav-link" href="#">Pricing</a>
-        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-      </div>
+<!-- Header Start -->
+    <div class="jumbotron jumbotron-fluid page-header" style="margin-bottom: 90px;">
+        <div class="container text-center py-5">
+            <h1 class="text-white display-3 mt-lg-5">About</h1>
+            <div class="d-inline-flex align-items-center text-white">
+                <p class="m-0"><a class="text-white" href="">Home</a></p>
+                <i class="fa fa-circle px-3"></i>
+                <p class="m-0">About</p>
+            </div>
+        </div>
     </div>
-  </div>
-</nav>  %>
-
-
-<header>  
-    <h2>Welcome</h2>
-      <ul>
-        <li><%= link_to 'Me', root_path %></li>
-        <li><%= link_to 'user', '/users' %></li>
-      </ul>
-</header>
+    <!-- Header End -->
 
 
 <% if user_signed_in? %>      
-                <%= link_to "Sign Out", sign_out_path %>
-            <% else %>
-                <%= link_to "Sign In", new_user_session_path %>
-            <% end %>
+  <%= link_to "Sign Out", sign_out_path %>
+<% else %>
+  <%= link_to "Sign In", new_user_session_path %>
+<% end %>
