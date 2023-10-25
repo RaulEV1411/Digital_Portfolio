@@ -1,0 +1,54 @@
+    <!-- Header Start -->
+    <div class="jumbotron jumbotron-fluid page-header" style="margin-bottom: 90px;">
+        <div class="container text-center py-5">
+            <h1 class="text-white display-3 mt-lg-5">Contact</h1>
+            <div class="d-inline-flex align-items-center text-white">
+                <p class="m-0"><a class="text-white" href="">Home</a></p>
+                <i class="fa fa-circle px-3"></i>
+                <p class="m-0">Contact</p>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+<%= form_with(model: @contact, url: contacts_path, local: true) do |form| %>
+        <div class="container-fluid">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <h1 class="section-title position-relative text-center mb-5">Contact Us For Any Query</h1>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-9">
+                    <div class="contact-form bg-light rounded p-5">
+                        <div id="success"></div>
+                        <form name="sentMessage" id="contactForm" novalidate="novalidate">
+                            <div class="form-row row">
+                                <div class="col-sm-6 control-group">
+                                    <%= form.text_field :name, required: true, placeholder:"Your Name" , class:"form-control p-4" %>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="col-sm-6 control-group">
+                                    <%= form.text_field :email, required: true, placeholder:"Your Email" , class:"form-control p-4" %>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <%= form.text_area :num, required: true, placeholder:"Your Phone Number" , class:"form-control p-4" %>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group">
+                                <%= form.text_area :message, required: true, placeholder:"Message" , class:"form-control p-4" %>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div>
+                                <%= form.submit "Submit",class:"btn btn-primary btn-block py-3 px-5" %>
+                            </div> 
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<% end %>

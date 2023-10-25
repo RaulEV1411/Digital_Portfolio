@@ -2,16 +2,19 @@ Rails.application.routes.draw do
   root "about#index"
   resources :posts
   devise_for :users
-  resources :skills
+  resources :skills , only: [:index,:show]
   resources :social_links
   resources :skill_types
   resources :technologies
   resources :user_types
   resources :projects
   resources :users
+  resources :contacts
   devise_scope :user do
     get "/about/sign_out", as: "sign_out", to: "devise/sessions#destroy"
   end
+
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
@@ -24,6 +27,8 @@ Rails.application.routes.draw do
     resources :tecnologies
     resources :users
     resources :users_types
+    resources :contacts
+
   end
 end
     
