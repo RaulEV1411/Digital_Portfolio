@@ -3,5 +3,9 @@
     <strong>Name:</strong>
     <%= skill.name %>
   </p>
+    <p>
+    <strong>skill_type:</strong>
+    <%= render SkillType.find(skill.skill_type_id) %>
+  </p>
 
 </div>

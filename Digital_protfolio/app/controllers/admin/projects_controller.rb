@@ -68,7 +68,7 @@ module Admin
       
           # Only allow a list of trusted parameters through.
           def project_params
-            params.require(:project).permit(:name, :description, :responsabilities, :start_date, :date, :finish_date, :date, :url, :string)
+            params.require(:project).permit(:name, :description, :responsabilities, :start_date,:finish_date, :url, :users_id)
           end
 
         def check_admin_role
